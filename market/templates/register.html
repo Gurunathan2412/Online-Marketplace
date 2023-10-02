@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Register
+{% endblock %}
+
+
+{% block content%}
+<!--<h1>Register Here</h1>-->
+<body class="text-center">
+<div class="container">
+    <form method="POST" class="form-register" style="color:white">
+        {{form.hidden_tag()}}
+        <img class="mb-4 rounded mx-auto d-block" style="width: 35%; margin-top:20px"
+             src="https://media.istockphoto.com/id/1322201350/photo/digitally-enhanced-shot-of-a-graph-showing-the-ups-and-downs-shares-on-the-stock-market.jpg?s=612x612&w=0&k=20&c=XRsOnrdHQIoqaolR00ganJACUpCxD4JCELt3N3Mm3tk="
+             alt="">
+        <h1 class="h3 mb-3 font-weight-normal fw-bold">
+            Register Here!!
+        </h1>
+        <br>
+        {{ form.username.label() }}
+        {{ form.username(class='form-control', placeholder='Enter the Username') }}
+
+        {{ form.email.label() }}
+        {{ form.email(class='form-control', placeholder='Enter the Email') }}
+
+        {{ form.password1.label() }}
+        {{ form.password1(class='form-control', placeholder='Enter the Password') }}
+
+        {{ form.password2.label() }}
+        {{ form.password2(class='form-control', placeholder='Confirm the Password') }}
+        <br>
+
+        <div class="checkbox mb-3">
+            <h6>Already have an account? Sign In!!</h6>
+            <a class="btn btn-sm btn-secondary" href="{{ url_for('login_page') }}">Login</a>
+        </div>
+
+        {{ form.submit(class='btn btn-lg btn-block btn-primary') }}
+        <!--        {% for item in form %}-->
+        <!--        {{item.label()}}-->
+        <!--        {% endfor %}-->
+    </form>
+
+</div>
+</body>
+
+{% endblock %}
